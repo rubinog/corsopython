@@ -1,12 +1,9 @@
-* ATTIVARE L'AMBIENTE VIRTUALE
-source /Users/gianluigirubino/virtualEnv/my_env/bin/activate
-
 # Impara Python Interattivamente nel Browser
 
 Questo progetto è un ambiente di apprendimento interattivo che ti permette di esplorare i concetti fondamentali e intermedi del linguaggio di programmazione Python direttamente nel tuo browser web, senza dover installare nulla localmente. Utilizza la libreria [Pyodide](https://pyodide.org/) per eseguire codice Python client-side.
 
-## Funzionalità Attuali
 
+## Funzionalità Attuali
 *   Navigazione tra diversi capitoli di apprendimento.
 *   Spiegazioni dettagliate dei concetti di Python.
 *   Esercizi pratici per ogni capitolo.
@@ -16,8 +13,8 @@ Questo progetto è un ambiente di apprendimento interattivo che ti permette di e
 *   Suggerimenti amichevoli per errori Python comuni.
 *   Struttura modulare con contenuti dei capitoli caricati dinamicamente da file JSON e codice predefinito da file Python separati.
 
-## Come Avviare il Progetto
 
+## Come Avviare il Progetto
 Poiché il progetto carica i contenuti dei capitoli tramite richieste HTTP (`fetch`), non può essere semplicemente aperto direttamente dal filesystem (`file:///`). Devi servirlo tramite un server web locale.
 
 Il modo più semplice per farlo è usare il server HTTP integrato di Python:
@@ -40,8 +37,8 @@ Il modo più semplice per farlo è usare il server HTTP integrato di Python:
 
 Per fermare il server, torna al terminale e premi `Ctrl + C`.
 
-## Struttura del Progetto
 
+## Struttura del Progetto
 La struttura delle cartelle e dei file principali del progetto è la seguente:
 
 corso/ 
@@ -49,16 +46,16 @@ corso/
 ├── style.css # Stili CSS per l'aspetto grafico 
 ├── script.js # Logica JavaScript (caricamento, Pyodide, esecuzione) 
 └── chapters/ # Cartella contenente i dati e il codice dei capitoli 
-├── manifest.json # Indice dei capitoli e percorsi ai file 
 │ ├── 01_introduzione.json # Dati (spiegazione, esercizio) per Cap. 1 
-├── 02_variabili.json # Dati per Cap. 2 
-├── ... # (altri file .json per ogni capitolo) 
-├── 22_database_sqlite.json 
+│ ├── 02_variabili.json # Dati per Cap. 2 
+│ ├── ... # (altri file .json per ogni capitolo) 
+│ ├── 22_database_sqlite.json 
 │ └── code/ # Cartella per i file Python di default 
-├── 01_introduzione.py # Codice Python di default per Cap. 1 
-├── 02_variabili.py # Codice Python di default per Cap. 2 
-├── ... # (altri file .py per ogni capitolo) 
-└── 22_database_sqlite.py
+│ │ ├── 01_introduzione.py # Codice Python di default per Cap. 1 
+│ │ ├── 02_variabili.py # Codice Python di default per Cap. 2 
+│ │ ├── ... # (altri file .py per ogni capitolo) 
+│ └──── 22_database_sqlite.py
+└──  manifest.json # Indice dei capitoli e percorsi ai file 
 
 
 *   **`index.html`**: Contiene l'ossatura della pagina web.
@@ -69,9 +66,7 @@ corso/
 *   **`chapters/code/*.py`**: File Python contenenti il codice predefinito mostrato nell'editor per l'esercizio di ciascun capitolo.
 
 
-
 ## Capitoli Attualmente Coperti
-
 Il corso copre i seguenti argomenti fondamentali e intermedi di Python:
 
 1.  Introduzione a Python
@@ -97,8 +92,8 @@ Il corso copre i seguenti argomenti fondamentali e intermedi di Python:
 21. Lavorare con File CSV (simulato in memoria)
 22. Database con SQLite (in memoria)
 
-## Possibili Espansioni Future
 
+## Possibili Espansioni Future
 Il progetto offre diverse direzioni per l'espansione, a seconda degli interessi e degli obiettivi:
 
 *   **Approfondimenti su Argomenti Esistenti:**
@@ -122,6 +117,7 @@ Il progetto offre diverse direzioni per l'espansione, a seconda degli interessi 
     *   Più esercizi per ogni capitolo.
     *   Esercizi più complessi o basati su piccoli progetti.
 
-Questo `README.md` ti dà una buona panoramica e una base solida per continuare a imparare ed eventualmente espandere il progetto in futuro!
+Questo `README.md` è solo una panoramica del progetto.
+Fammi sapere se vuoi proporre modifiche o integrazioni!
 
-Spero ti sia utile! Fammi sapere se vuoi modificarlo o aggiungere altro.
+ilRubio
