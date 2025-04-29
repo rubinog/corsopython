@@ -120,4 +120,4 @@ Il progetto offre diverse direzioni per l'espansione, a seconda degli interessi 
 Questo `README.md` è solo una panoramica del progetto.
 Fammi sapere se vuoi proporre modifiche o integrazioni!
 
-ilRubio
+rubinoG
