@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impara Python</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/material-darker.min.css"> <!-- Tema Scuro per l'editor -->
+    <!-- Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/python/python.min.js"></script>
+</head>
+<body>
+    <header>
+        <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <h1>Impara Python Interattivamente</h1>
+    </header>
+
+    <div class="layout-container">
+        <nav id="chapters-nav">
+            <h2>Capitoli</h2>
+            <ul id="chapters-list">
+                <!-- Popolato dinamicamente da script.js -->
+                <li>Caricamento capitoli...</li>
+            </ul>
+        </nav>
+        <main id="content">
+            <section id="explanation">
+                <h2>Spiegazione</h2>
+                <div id="explanation-content">
+                    <p>Seleziona un capitolo dal menu per iniziare.</p>
+                </div>
+            </section>
+            <hr>
+            <section id="exercise">
+                <h2>Esercizio</h2>
+                <div id="exercise-content">
+                    <p>Le istruzioni appariranno qui.</p>
+                </div>
+                <!-- Pulsante per segnare come completato -->
+                <button id="mark-complete-button" style="margin-bottom: 10px;">Segna come Completato</button>
+                <div id="code-editor">
+                    <!-- La textarea originale verrà sostituita da CodeMirror -->
+                    <textarea id="python-code" rows="10" placeholder="Scrivi il tuo codice Python qui..."></textarea>
+                </br>
+                    <button id="run-button" disabled>Esegui Codice</button>
+                    <!-- L'output ora verrà popolato con div colorati -->
+                    <div id="output" class="output-container">Caricamento...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Il Tuo Nome o Organizzazione</p>
+    </footer>
+
+    <!-- Lo script principale ora caricherà i dati dinamicamente -->
+    <script src="script.js"></script>
+</body>
+</html>

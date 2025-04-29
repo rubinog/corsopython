@@ -1,0 +1,134 @@
+[
+  {
+    "id": "introduzione",
+    "title": "Introduzione a Python",
+    "dataFile": "chapters/01_introduzione.json",
+    "codeFile": "chapters/code/01_introduzione.py"
+  },
+  {
+    "id": "variabili_tipi",
+    "title": "Variabili e Tipi di Dati",
+    "dataFile": "chapters/02_variabili.json",
+    "codeFile": "chapters/code/02_variabili.py"
+  },
+  {
+    "id": "operatori",
+    "title": "Operatori",
+    "dataFile": "chapters/03_operatori.json",
+    "codeFile": "chapters/code/03_operatori.py"
+  },
+  {
+    "id": "controllo_flusso",
+    "title": "Controllo del Flusso (if/elif/else)",
+    "dataFile": "chapters/04_controllo_flusso.json",
+    "codeFile": "chapters/code/04_controllo_flusso.py"
+  },
+  {
+    "id": "cicli",
+    "title": "Cicli (for/while)",
+    "dataFile": "chapters/05_cicli.json",
+    "codeFile": "chapters/code/05_cicli.py"
+  },
+  {
+    "id": "liste",
+    "title": "Liste",
+    "dataFile": "chapters/06_liste.json",
+    "codeFile": "chapters/code/06_liste.py"
+  },
+  {
+    "id": "funzioni",
+    "title": "Funzioni",
+    "dataFile": "chapters/07_funzioni.json",
+    "codeFile": "chapters/code/07_funzioni.py"
+  },
+  {
+    "id": "dizionari",
+    "title": "Dizionari",
+    "dataFile": "chapters/08_dizionari.json",
+    "codeFile": "chapters/code/08_dizionari.py"
+  },
+  {
+    "id": "tuple",
+    "title": "Tuple",
+    "dataFile": "chapters/09_tuple.json",
+    "codeFile": "chapters/code/09_tuple.py"
+  },
+  {
+    "id": "set",
+    "title": "Set (Insiemi)",
+    "dataFile": "chapters/10_set.json",
+    "codeFile": "chapters/code/10_set.py"
+  },
+  {
+    "id": "stringhe_manipolazione",
+    "title": "Manipolazione Stringhe",
+    "dataFile": "chapters/11_stringhe_manipolazione.json",
+    "codeFile": "chapters/code/11_stringhe_manipolazione.py"
+  },
+  {
+    "id": "moduli_pacchetti",
+    "title": "Moduli e Pacchetti",
+    "dataFile": "chapters/12_moduli_pacchetti.json",
+    "codeFile": "chapters/code/12_moduli_pacchetti.py"
+  },
+  {
+    "id": "file_io",
+    "title": "Input/Output File",
+    "dataFile": "chapters/13_file_io.json",
+    "codeFile": "chapters/code/13_file_io.py"
+  },
+  {
+    "id": "errori_eccezioni",
+    "title": "Gestione Errori (try/except)",
+    "dataFile": "chapters/14_errori_eccezioni.json",
+    "codeFile": "chapters/code/14_errori_eccezioni.py"
+  },
+  {
+    "id": "classi_oggetti",
+    "title": "Classi e Oggetti (OOP)",
+    "dataFile": "chapters/15_classi_oggetti.json",
+    "codeFile": "chapters/code/15_classi_oggetti.py"
+  },
+  {
+    "id": "list_comprehensions",
+    "title": "List Comprehensions",
+    "dataFile": "chapters/16_list_comprehensions.json",
+    "codeFile": "chapters/code/16_list_comprehensions.py"
+  },
+  {
+    "id": "lambda",
+    "title": "Funzioni Lambda",
+    "dataFile": "chapters/17_lambda.json",
+    "codeFile": "chapters/code/17_lambda.py"
+  },
+  {
+    "id": "args_kwargs_scope",
+    "title": "Argomenti Funzioni e Scope",
+    "dataFile": "chapters/18_args_kwargs_scope.json",
+    "codeFile": "chapters/code/18_args_kwargs_scope.py"
+  },
+  {
+    "id": "decorators",
+    "title": "Decorators",
+    "dataFile": "chapters/19_decorators.json",
+    "codeFile": "chapters/code/19_decorators.py"
+  },
+  {
+    "id": "generators",
+    "title": "Generators",
+    "dataFile": "chapters/20_generators.json",
+    "codeFile": "chapters/code/20_generators.py"
+  },
+  {
+    "id": "csv_handling",
+    "title": "Lavorare con File CSV",
+    "dataFile": "chapters/21_csv_handling.json",
+    "codeFile": "chapters/code/21_csv_handling.py"
+  },
+  {
+    "id": "database_sqlite",
+    "title": "Database con SQLite",
+    "dataFile": "chapters/22_database_sqlite.json",
+    "codeFile": "chapters/code/22_database_sqlite.py"
+  }
+]

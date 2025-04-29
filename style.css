@@ -1,0 +1,328 @@
+/* Impostazioni base */
+:root {
+    --python-blue: #3776AB; /* Blu Python */
+    --python-yellow: #FFD43B; /* Giallo Python */
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #dee2e6;
+    --text-color: #333;
+    --link-color: var(--python-blue); /* Usa blu per i link */
+    --link-hover-color: #2a5d8a; /* Blu più scuro per hover */
+    --sidebar-bg: #f0f4f7; /* Sfondo leggermente bluastro/grigio per sidebar */
+    --sidebar-border: var(--dark-gray);
+    --button-bg: var(--python-blue);
+    --button-text: white;
+    --button-hover-bg: var(--link-hover-color);
+    --output-bg: var(--light-gray); /* Sfondo contenitore output */
+    --output-border: var(--dark-gray);
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-color); /* Applica colore testo base */
+}
+
+header, footer {
+    background-color: var(--light-gray);
+    padding: 10px 20px;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Stile per il pulsante di toggle */
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.8em; /* Dimensione icona hamburger */
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 15px; /* Spazio tra pulsante e titolo */
+    line-height: 1; /* Per un migliore allineamento verticale */
+    color: var(--python-blue); /* Colora l'icona */
+}
+#menu-toggle:hover {
+    color: var(--link-hover-color);
+}
+
+
+header h1 {
+    flex-grow: 1; /* Fa sì che h1 occupi lo spazio rimanente */
+    margin: 0; /* Rimuove margini predefiniti */
+}
+
+
+/* Contenitore principale per il layout a colonne */
+.layout-container {
+    display: flex;
+    flex-grow: 1;
+    border-top: 1px solid var(--sidebar-border);
+    border-bottom: 1px solid var(--sidebar-border);
+}
+
+/* Stile del menu di navigazione (sidebar) con colori Python */
+#chapters-nav {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: var(--sidebar-bg); /* Usa variabile per sfondo */
+    padding: 15px;
+    border-right: 1px solid var(--sidebar-border); /* Usa variabile per bordo */
+    overflow-y: auto;
+    transition: width 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+#chapters-nav h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: var(--python-blue); /* Titolo capitoli in blu */
+    border-bottom: 2px solid var(--python-yellow); /* Bordo giallo sotto il titolo */
+    padding-bottom: 5px;
+}
+
+#chapters-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#chapters-list li {
+    margin-bottom: 5px;
+}
+
+#chapters-list a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--link-color); /* Usa variabile */
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-left-color 0.2s ease; /* Aggiunta transizione bordo */
+    border-left: 3px solid transparent; /* Spazio per indicatore attivo */
+    position: relative; /* Per posizionare ::after */
+}
+
+#chapters-list a:hover {
+    background-color: var(--medium-gray);
+    color: var(--link-hover-color); /* Usa variabile */
+    border-left-color: var(--python-yellow); /* Giallo al passaggio */
+}
+
+/* Stile per il link del capitolo attivo */
+#chapters-list a.active {
+    background-color: var(--medium-gray);
+    color: var(--link-hover-color);
+    font-weight: bold;
+    border-left-color: var(--python-blue); /* Blu per attivo */
+}
+
+/* Stile per il link del capitolo completato */
+#chapters-list a.completed {
+    color: #4caf50; /* Verde */
+    /* font-weight: bold; */ /* Già presente se è anche active */
+}
+
+#chapters-list a.completed::after {
+    content: ' ✔'; /* Carattere spunta */
+    color: #4caf50;
+    font-weight: normal; /* Rende la spunta non bold */
+    margin-left: 5px;
+    /* position: absolute; right: 10px; */ /* Opzionale per posizionamento fisso */
+}
+
+
+/* Stili per il menu collassato */
+.layout-container.menu-collapsed #chapters-nav {
+    width: 0;
+    padding: 15px 0;
+    overflow: hidden;
+    border-right: none;
+    opacity: 0;
+}
+
+/* Stile del contenuto principale */
+#content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#explanation, #exercise {
+    margin-bottom: 20px;
+}
+
+/* Stili per il codice nelle spiegazioni */
+#explanation pre {
+    background-color: #f0f0f0; /* Sfondo leggermente diverso per i blocchi di codice */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Scroll orizzontale se il codice è lungo */
+    border: 1px solid #ddd;
+}
+
+#explanation code {
+    font-family: monospace;
+    background-color: #e7e7e7; /* Sfondo per codice inline */
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.95em;
+}
+
+#explanation pre code {
+    background-color: transparent; /* Rimuove lo sfondo doppio nel blocco pre */
+    padding: 0;
+    border-radius: 0;
+    font-size: 1em; /* Ripristina dimensione font nel blocco pre */
+}
+
+
+#code-editor {
+    margin-top: 15px;
+}
+
+/* Stili per CodeMirror */
+.CodeMirror {
+    border: 1px solid var(--dark-gray);
+    height: auto; /* O un'altezza fissa se preferisci */
+    min-height: 150px;
+    font-size: 0.95em; /* Adegua la dimensione del font se necessario */
+    margin-bottom: 10px; /* Spazio sotto l'editor */
+}
+
+/* Nascondi la textarea originale se CodeMirror è attivo */
+textarea#python-code {
+    display: none;
+}
+
+
+#run-button, #mark-complete-button {
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: var(--button-bg); /* Colore bottone */
+    color: var(--button-text);
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    margin-right: 5px; /* Spazio tra i bottoni */
+}
+#run-button:hover:not(:disabled),
+#mark-complete-button:hover:not(:disabled) {
+    background-color: var(--button-hover-bg); /* Hover bottone */
+}
+#run-button:disabled,
+#mark-complete-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* Stili per l'output formattato */
+.output-container {
+    background-color: var(--output-bg); /* Sfondo contenitore output */
+    padding: 10px;
+    border: 1px solid var(--output-border);
+    border-radius: 4px;
+    min-height: 50px;
+    font-family: monospace;
+    color: #333; /* Colore testo default (per messaggio "nessun output") */
+}
+
+.output-stdout,
+.output-stderr,
+.output-hint {
+    white-space: pre-wrap; /* Mantiene ritorni a capo e spazi */
+    word-wrap: break-word;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+/* Rimuove margine inferiore dall'ultimo elemento nell'output */
+.output-container > div:last-child {
+    margin-bottom: 0;
+}
+
+
+.output-stdout {
+    background-color: #e8f5e9; /* Verde chiaro per stdout */
+    color: #1b5e20; /* Verde scuro */
+    border: 1px solid #c8e6c9;
+}
+
+.output-stderr {
+    background-color: #ffebee; /* Rosso chiaro per stderr */
+    color: #c62828; /* Rosso scuro */
+    border: 1px solid #ffcdd2;
+}
+
+.output-hint {
+    background-color: #e3f2fd; /* Blu chiaro per suggerimenti */
+    color: #0d47a1; /* Blu scuro */
+    border: 1px solid #bbdefb;
+    font-style: italic;
+    margin-top: 5px; /* Spazio sopra il suggerimento */
+}
+
+.output-separator {
+    border: 0;
+    height: 1px;
+    background-color: var(--dark-gray);
+    margin: 10px 0;
+}
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--dark-gray);
+    margin: 20px 0;
+}
+
+footer {
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center; /* Centra il testo nel footer */
+    padding: 10px 20px;
+    background-color: var(--light-gray);
+    flex-shrink: 0;
+}
+
+/* Stili per schermi più piccoli */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+    }
+
+    #chapters-nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--sidebar-border);
+        max-height: none; /* Rimuovi se collassabile */
+        overflow-y: auto;
+        transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+        opacity: 1;
+    }
+
+    .layout-container.menu-collapsed #chapters-nav {
+        max-height: 0;
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        opacity: 0;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    header h1 {
+        font-size: 1.2em; /* Riduci dimensione titolo su mobile */
+    }
+}
