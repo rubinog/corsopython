@@ -41,23 +41,6 @@ Per fermare il server, torna al terminale e premi `Ctrl + C`.
 ## Struttura del Progetto
 La struttura delle cartelle e dei file principali del progetto è la seguente:
 
-corso/ 
-├── index.html # Struttura HTML principale della pagina 
-├── style.css # Stili CSS per l'aspetto grafico 
-├── script.js # Logica JavaScript (caricamento, Pyodide, esecuzione) 
-└── chapters/ # Cartella contenente i dati e il codice dei capitoli 
-│ ├── 01_introduzione.json # Dati (spiegazione, esercizio) per Cap. 1 
-│ ├── 02_variabili.json # Dati per Cap. 2 
-│ ├── ... # (altri file .json per ogni capitolo) 
-│ ├── 22_database_sqlite.json 
-│ └── code/ # Cartella per i file Python di default 
-│ │ ├── 01_introduzione.py # Codice Python di default per Cap. 1 
-│ │ ├── 02_variabili.py # Codice Python di default per Cap. 2 
-│ │ ├── ... # (altri file .py per ogni capitolo) 
-│ └──── 22_database_sqlite.py
-└──  manifest.json # Indice dei capitoli e percorsi ai file 
-
-
 *   **`index.html`**: Contiene l'ossatura della pagina web.
 *   **`style.css`**: Definisce l'aspetto visivo dell'interfaccia.
 *   **`script.js`**: Gestisce il caricamento dei capitoli, l'inizializzazione di Pyodide, l'esecuzione del codice Python e l'aggiornamento dell'interfaccia utente.
